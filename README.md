@@ -49,3 +49,13 @@ UPDATE club_member_info_cleaned
 SET age = SUBSTRING(age,1,2)
 WHERE LENGTH(age)>2;
 ```
+6. Fix typo
+```sql
+SELECT martial_status
+FROM club_member_info_cleaned
+GROUP BY martial_status;
+
+UPDATE club_member_info_cleaned 
+SET martial_status = 'divorced'
+WHERE martial_status = 'divored';
+```
