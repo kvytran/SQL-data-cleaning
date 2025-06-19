@@ -6,5 +6,5 @@ This is an educational project on data cleaning and preparation using SQL. The o
 ```sql
 SELECT *
 FROM club_member_info
-LIMIT 10;
+LIMIT 10
 ```
