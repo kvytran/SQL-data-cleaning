@@ -43,7 +43,7 @@ SELECT * FROM club_member_info
 UPDATE club_member_info_cleaned
 SET full_name = UPPER(TRIM(full_name));
 ```
-6. Handle unrealistic age
+5. Handle unrealistic age
 ```sql
 UPDATE club_member_info_cleaned
 SET age = SUBSTRING(age,1,2)
