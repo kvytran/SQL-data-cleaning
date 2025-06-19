@@ -33,8 +33,19 @@ CREATE TABLE club_member_info_cleaned (
 	membership_date VARCHAR(50)
 );
 ```
-Copy all values from original table
+3. Copy all values from original table
 ```sql
 INSERT INTO club_member_info_cleaned
 SELECT * FROM club_member_info
+```
+4. Modify letter case and remove whitespaces
+```sql
+UPDATE club_member_info_cleaned
+SET full_name = UPPER(TRIM(full_name));
+```
+6. Handle unrealistic age
+```
+UPDATE club_member_info_cleaned
+SET age = SUBSTRING(age,1,2)
+WHERE LENGTH(age)>2
 ```
